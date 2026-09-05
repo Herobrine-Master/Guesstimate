@@ -15,6 +15,14 @@ dependencies {
     testRuntimeOnly("org.junit.platform:junit-platform-launcher")
 }
 
+tasks.jar {
+    manifest {
+        attributes["Main-Class"] = "com.herobrinemaster.guesstimate.Guesstimate"
+    }
+    archiveBaseName.set("guesstimate")
+    archiveVersion.set("")
+}
+
 tasks.test {
     useJUnitPlatform()
 }
