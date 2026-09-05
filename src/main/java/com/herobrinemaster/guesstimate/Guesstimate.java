@@ -95,12 +95,12 @@ public class Guesstimate {
                 score = playerNames.length - i;
                 prevScore = score;
             }
-            totalScores[i] += score;
+            totalScores[playerIdxSortedByDiff[i]] += score;
 
             System.out.printf("%-20s | %-15d | %-12d%n",
                     playerNames[playerIdxSortedByDiff[i]],
                     score,
-                    totalScores[i]);
+                    totalScores[playerIdxSortedByDiff[i]]);
         }
     }
 
