@@ -113,7 +113,7 @@ public class Guesstimate {
         questions[3] = "How many planets are in our solar system?";
         questions[4] = "How many sides does a hexagon have?";
         questions[5] = "How many keys are on a standard piano?";
-        questions[6] = "How many Meters long is the Great Wall of China?";
+        questions[6] = "How many kilometers long is the Great Wall of China?";
         questions[7] = "How many centimeters are in one meter?";
         questions[8] = "What is the deepest point in the ocean in meters?";
         questions[9] = "How many bones are in an adult human body?";
