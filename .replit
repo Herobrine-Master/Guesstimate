@@ -1,0 +1,2 @@
+entrypoint = "src/main/java/com/herobrinemaster/guesstimate/Guesstimate.java"
+run = "javac -d bin src/main/java/com/herobrinemaster/guesstimate/*.java && java -cp bin com.herobrinemaster.guesstimate.Guesstimate"
