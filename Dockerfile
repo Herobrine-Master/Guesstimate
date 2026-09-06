@@ -1,13 +1,13 @@
 # Stage 1: Build the JAR with Gradle
-FROM eclipse-temurin:17-jdk AS builder
+FROM eclipse-temurin:25-jdk AS builder
 WORKDIR /app
 COPY gradlew gradlew.bat settings.gradle.kts build.gradle.kts ./
 COPY gradle gradle
 COPY src src
 RUN chmod +x gradlew && ./gradlew jar --no-daemon
 
-# Stage 2: Runtime container with OpenJDK 17 and ttyd
-FROM ubuntu:22.04
+# Stage 2: Runtime container with OpenJDK 25 and ttyd
+FROM eclipse-temurin:25-jre
 
 ENV DEBIAN_FRONTEND=noninteractive
 
@@ -15,7 +15,6 @@ RUN apt-get update && \
     apt-get install -y --no-install-recommends \
         curl \
         ca-certificates \
-        openjdk-17-jre-headless \
     && rm -rf /var/lib/apt/lists/*
 
 # Install ttyd web terminal

@@ -11,7 +11,7 @@ pinned: false
 
 # Guesstimate
 
-A multiplayer console trivia guessing game written in Java and playable directly in the browser via a web terminal (`ttyd`) running OpenJDK 17.
+A multiplayer console trivia guessing game written in Java and playable directly in the browser via a web terminal (`ttyd`) running Java 25.
 
 ## Free Online Deployment Options
 
