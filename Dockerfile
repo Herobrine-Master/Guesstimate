@@ -26,7 +26,13 @@ RUN ARCH=$(uname -m) && \
     chmod +x /usr/local/bin/ttyd
 
 # Run as non-root user (UID 1000 required for Hugging Face Spaces)
-RUN useradd -m -u 1000 user
+RUN if id -u 1000 >/dev/null 2>&1; then \
+        userdel -f -r "$(id -un 1000)" 2>/dev/null || true; \
+    fi && \
+    if getent group 1000 >/dev/null 2>&1; then \
+        groupdel "$(getent group 1000 | cut -d: -f1)" 2>/dev/null || true; \
+    fi && \
+    useradd -m -u 1000 user
 WORKDIR /home/user/app
 
 COPY --from=builder /app/build/libs/guesstimate.jar /home/user/app/guesstimate.jar
